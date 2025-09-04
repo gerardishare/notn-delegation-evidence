@@ -1,0 +1,55 @@
+{
+    "iss": "identifier-of-authorization-registry",
+    "sub": "identifier-of-authorization-registry",
+    "jti": "unique-identifier-of-request",
+    "iat": 1711466985,
+    "exp": 1711467015,
+    "aud": "identifier-of-data-provider",
+    "delegationEvidence": {
+        "notBefore": 1541058939,
+        "notOnOrAfter": 2147483647,
+        "policyIssuer": "identifier-of-shipper",
+        "target": {
+            "accessSubject": "identifier-of-customs"
+        },
+        "policySets": [
+            {
+                "maxDelegationDepth": 0,
+                "target": {
+                    "environment": {
+                        "licenses": [
+                            "0002"
+                        ]
+                    }
+                },
+                "policies": [
+                    {
+                        "target": {
+                            "resource": {
+                                "type": "*",
+                                "identifiers": [
+                                    "*"
+                                ],
+                                "attributes": [
+                                    "*"
+                                ]
+                            },
+                            "environment": {
+                                "shipment-uuid": "uuid-of-shipment"
+                            },
+                            "actions": [
+                                "NOTN.SUBSCRIBE",
+                                "NOTN.GETDETAILS"
+                            ]
+                        },
+                        "rules": [
+                            {
+                                "effect": "Permit"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
